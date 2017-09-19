@@ -1,0 +1,26 @@
+
+<form method="post" enctype="multipart/form-data" action="/uploadFile">
+
+    <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Імя події">
+    </div>
+
+    <div class="form-group">
+                <input type="datetime-local"  name="holdingDate" placeholder="Дата проведення ">
+    </div>
+
+    <div class="form-group">
+                <input type="text" class="form-control" placeholder="Місце проведення" name="place">
+    </div>
+            
+    <div class="form-group">            
+                <textarea type="text" class="form-control" placeholder="Опишіть подію" class="form-control" name="description"></textarea>
+    </div>
+    
+    <div class="form-group">
+                <input type="file" multiple="1" name="upl">
+                <input type="submit" class="btn btn-primary" value="Загрузити подію">      
+    </div>
+    
+</form>
+<button class="btn btn-primary" ng-click="calcelEvent()">Відміна</button> 

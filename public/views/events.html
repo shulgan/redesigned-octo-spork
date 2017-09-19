@@ -1,0 +1,47 @@
+<div ng-controller="eventCtrl">
+    <ul class="nav nav-tabs">
+        <li  ng-class="{active: selected=='eventFromAdmins'}"  ng-click="selected='eventFromAdmins' ; loadEvents({isAdmins:'true'})"><a data-toggle="tab">Адміністрація рекомендує</a></li>
+        <li  ng-class="{active: selected=='eventFromUsers'}"  ng-click="selected='eventFromUsers'; loadEvents({isAdmins:'false'})"><a data-toggle="tab">Користувачі рекомендують</a></li>
+      </ul>
+      
+
+
+            <div class="panel eventPanel">
+              <div ng-repeat="event in events" class="row">
+                <div class="thumbnail viewEvent col-md-8">
+                  <div class="header panel-heading">
+                    <a>
+                    <img src="{{getAva(event)}}" alt="Фото автора" class="authoricon"/>
+                    {{getAuthorName(event)}}</a> запрошує на подію:
+                  </div>
+                          <img src="{{getEventImage(event)}}" alt="1"/>
+                          <div class="caption" >
+                            <h3 class="hideOverflowText">{{event.name}}</h3>
+                                  <p>Час проведення:{{event.holdingDate}}</p>
+                                  <p>Час створення:{{event.creationDate}}</p>
+                                  <p>Місце проведення:{{event.place}}</p>
+                                  <p class="hideOverflowText">{{event.description}}</p>
+                        </div>
+                      </div>
+                      
+                <div class="comment col-md-4">
+                    <div class="media">
+
+                      <a class="pull-left" href="#">
+                        <img class="media-object" src="public/icons/photoAnon.jpg" alt="author">
+                        name surname
+                      </a>
+                     Сьогодні у Львові двоє геніїв пишуть соц мережу!!!!
+                    </div>
+                    <hr>
+                </div>
+
+                
+           
+                   
+              </div>
+
+            </div>
+       
+</div>
+

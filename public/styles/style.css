@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+/* body{
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    
+} */
+
+#wrap{
+    padding: 15px;
+    padding-top: 0;
+}
+
+#wrap .userWrap header img{
+    max-width: 200px;
+    max-height: 400px;
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+#wrap .userWrap header{
+  
+    background-color: rgb(247, 247, 247);
+    float: left;
+}
+
+
+.count{
+    float:right;
+}
+
+.nav{
+    cursor: pointer;
+}
+
+/* .eventPanel{
+    width: 100%;
+} */
+
+.tab-content .eventPanel{
+    margin: 15px 0px;
+}
+
+.header img.authoricon{
+    width:30px;
+   height: 30px;
+    float: left;
+    margin-bottom: 5px;
+}
+
+.thumbnail .header a{
+    cursor: pointer;
+}
+
+/* .content .eventContent{
+     overflow-y: auto; 
+} */
+
+.hideOverflowText{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+
+/* .newEventCtrls{ */
+    /* height: 50px; */
+    /* color: grey; */
+    /* cursor: text; */
+    /* font-size: 25px; */
+    /* font-style: oblique; */
+/* } */
+
+.newEventCtrls .newEvent{
+    position: absolute;
+    z-index: 1;
+    width:96.7%;
+}
+
+
+input[type=file]{
+    float: left;
+}
+
+.newEvent
+{
+    padding: 20px;
+    
+}
+
+.newEvent textarea{
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100px;
+    min-height: 100px;
+}
+
+.newEventCtrls{
+    height: 45px;  
+    width: 100%;
+}
+
+.newEvent input[type="text"],
+.newEvent input[type="datetime"]
+{
+	height: 45px;
+    border: 1px solid #ddd;
+    width: 100%;
+    padding-left: 10px;
+	font-size: 16px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.newEvent input:hover,
+.newEvent input:focus {
+	outline:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-color: #ccc;
+}
+.newEvent input[type="button"] {
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+}
+.newEvent input[type="button"]:hover,
+.newEvent input[type="button"]:focus {
+	color: #fff;
+}
+
+
+/*  */
+.header-menu{
+    height: 40px;
+    background-color: #337ab7;
+    padding: 3px;
+
+}
+
+
+.header-menu .logo{
+    height: 100%;
+   
+}
+
+.header-menu .search-input{
+    margin-left: 20px;
+    border: 1px solid #ddd;
+	-webkit-transition: border 0.1s linear;
+	-moz-transition: border 0.1s linear;
+	transition: border 0.1s linear;
+}
+
+
+.header-menu .exit{
+
+    float: right;
+    margin-right: 10px;
+}
+
+.comment img{
+    width: 60px;
+
+}
+/*  */

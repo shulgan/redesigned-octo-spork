@@ -1,0 +1,27 @@
+<div ng-controller="eventCtrl">
+    <div class="panel panel-primary">
+      
+        <div class="newEventCtrls" ng-click="changeDialog()">
+            <div class="newEvent panel panel-primary" ng-include="current.dialog">
+                
+             </div>
+
+                Створіть нову подію
+            </div>
+    </div>
+        <div ng-repeat="event in events">
+            <div class="thumbnail">
+                <div class="header panel-heading">
+                 <a>
+                <img src="public/icons/photoAnon.jpg" alt="Фото автора" class="authoricon"/>
+                      {{event.authorName}}</a> запрошує на подію:
+                 </div>
+                    <img src="{{getEventImage(event)}}" alt="1">
+                    <div class="caption">
+                    <h3 class="hideOverflowText">{{event.name}}</h3>
+                                   
+                            <p class="hideOverflowText">{{event.description}}</p>
+                    </div>
+                  </div>
+                </div>
+</div>

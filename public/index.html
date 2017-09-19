@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SocialLviv</title>
+   
+    <script src="public/scripts/angular.min.js"></script>
+    <script src="public/scripts/modules/main.js"></script>
+    <script src="public/scripts/modules/user.js"></script>
+    <script src="public/scripts/modules/event.js"></script>
+    
+    <link rel="stylesheet" href="public/styles/bootstrap.css">
+    <link rel="stylesheet" href="public/styles/style.css">
+
+    
+</head>
+<body ng-controller="mainCtrl">
+    <div id="wrap" ng-controller="userCtrl">
+
+        <div class="userWrap">
+             <div class="header-menu row-md-12">
+                <img class="logo" src="https://nlstar.com/apple-touch-icon.png" alt="asd">
+                <input type="search" class="search-input" ng-model="current.searchStr" ng-click="searchUserShow()" ng-keyup="searchUser({name:current.searchStr})"  placeholder="Пошук">
+                <input type="button" class="exit btn " ng-class="{active: selected=='exit'}" ng-click="selected='exit'; exit()" value="Вихід">
+            </div> 
+
+            
+            <header >
+                
+                <div ><img src="{{user.avatar}}" alt="User" >
+                <form enctype="multipart/form-data" action="/uploadAva" method="post">
+                    <input type="file" name="uplAva" id="uploadAva">
+                    <input type="submit" value="Загрузити">
+                </form>
+
+                </div>
+                
+                <div  ng-include="current.header">
+                        
+                   
+                </div>
+                
+                  <aside class="navigation">
+                    <ul class="nav nav-pills nav-stacked menu">
+                        <li ng-class="{active: selected=='main'}"  ng-click="selected='main'; mainShow()" ><a>Головна</a></li>
+                        <li ng-class="{active: selected=='event'|| current.view=='public/views/events.html'}" id="events" ng-click="selected='event'; eventShow()"><a>Події Львова <span class="count badge">1</span></a></li>
+                        <li ng-class="{active: selected=='friends'}" ng-click="selected='friends'; friendShow()" id="friends"><a>Друзі <span class="count badge">2</span></a></li>
+                        <li ng-class="{active: selected=='mess'}" ng-click="selected='mess'; messageShow()" id="messages"><a>Повідомлення <span class="count badge">3</span></a></li>
+                        <li ng-class="{active: selected=='photo'}" ng-click="selected='photo'; photoShow()"><a>Фотографії</a></li>
+                        <li ng-class="{active: selected=='set'}" ng-click="selected='set'; settingShow()"><a>Налаштування</a></li>
+                        <li ng-class="{active: selected=='exit'}" ng-click="selected='exit'; exit()"><a>Вихід</a></li>
+                    </ul>
+                </aside>
+
+            </header>
+            <div id="userBody" class="row">
+              
+               <div class="content col-md-8" ng-include="current.view">
+                    Загрузка....
+               </div>
+               <aside class="col-md-2 rside" ng-include="current.advertising">
+                   Тут може знаходитись ваша реклама
+               </aside>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
