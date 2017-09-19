@@ -1,4 +1,4 @@
-var mongoose=require('../mymongoose.js');
+var mongoose=require('../mymongoose.js'); 
 var schemaUser=mongoose.Schema({
         login:{type:String,require:true,unique:true},
         password:{type:String,require:true,unique:true},
