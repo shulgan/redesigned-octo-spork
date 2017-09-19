@@ -1,7 +1,6 @@
 {
-  "name": "SocialNetwork",
+  "name": "lvivsociety",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
     "accepts": "^1.3.4",
