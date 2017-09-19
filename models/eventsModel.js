@@ -1,4 +1,4 @@
-var mongoose=require('../mymongoose.js');
+var mongoose=require('../mymongoose.js'); 
 var schemaEvent=mongoose.Schema({
         name:{type:String,require:true},
         description:{type:String},
