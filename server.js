@@ -140,19 +140,6 @@ app.get('/logout',function(req,res){
 });
 
 
-// var multer = require('multer');
-// var storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//   cb(null, './users/'+req.user._id)
-//   },
-//   filename: function (req, file, cb) {
-//   cb(null,  file.originalname );
-//   }
-//   });
-
-  
-// var upload = multer({ storage: storage });
-
 
 var userStorage =   multer.diskStorage({
     destination: function (req, file, callback) { 
@@ -172,9 +159,6 @@ var userStorage =   multer.diskStorage({
             if(err) {
                 return res.end("Error uploading file.");
             }
-            // User.update({_id:req.user._id},{$push:{avatar:res.req.file.path}},function(err,data){
-            //       res.redirect('/');
-            // });
             User.update({_id:req.user._id},{avatar:res.req.file.path},function(err,data){
                       res.redirect('/');
                 });
@@ -254,7 +238,6 @@ User.find({name:req.body.name},{password:0},function(err,data){
 
 app.post('/getAva',function(req,res){
     User.find({_id:req.body.id},function(err,data){
-       // res.send(data[0].avatar);
        res.send({
            _id:data[0]._id,
            avatar:data[0].avatar,
@@ -265,12 +248,12 @@ app.post('/getAva',function(req,res){
 
 
 
+app.post('/deleteEvent',function(req,res){
+    MyEvent.remove({_id:req.body._id},function(err,data){
+        res.send(data);
+    });
 
-
-
-
-
-
+});
 
 
 
