@@ -1,15 +1,17 @@
 var module = angular.module("mainApp",["userApp","eventApp"]);
 module.controller("mainCtrl",function($scope,$http){
-  
+
+    $scope.$on('me',function(event,data){
+        $scope.user=data.data;
+    });
 
     $scope.current={
-        header:"public/views/user.html",
-        view:"public/views/events.html",
+        view:"public/views/profile.html",
         advertising:""
     }
 
     $scope.mainShow=function(){
-        $scope.current.view="public/views/main.html"
+        $scope.current.view="public/views/profile.html"
     }
 
     $scope.friendShow=function(){
@@ -27,7 +29,7 @@ module.controller("mainCtrl",function($scope,$http){
     }
     
     $scope.photoShow=function(){
-        $scope.current.view="public/views/photos.html"
+        $scope.current.view="public/public/views/photos.html"
     }
 
     $scope.settingShow=function(){

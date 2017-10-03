@@ -87,7 +87,6 @@ app.get('/', function (req, res) {
 
 app.post('/',function(req,res){
     User.find({login:req.user.login},{password:0},function(err,data){
-    //    console.log(data);
         data[0].sex=(data[0].sex==1)?"чоловіча":"жіноча";
         res.send(data[0]);
     })
@@ -220,7 +219,7 @@ app.post('/uploadFile',function(req,res){
 
 /* пошук Користувачів */
 app.post('/searchUser',function(req,res){
-    console.log(req.body);
+    // console.log(req.body);
 User.find({name:req.body.name},{password:0},function(err,data){
 
         res.send(data);
@@ -257,10 +256,21 @@ app.post('/deleteEvent',function(req,res){
 
 
 
+// Добавляю коменти до події
 
 
+app.post('/addComment',function(req,res){
+   var comment={
+       text:req.body.text,
+       idAuthor:req.user._id
+   }
 
+   MyEvent.findByIdAndUpdate(req.body.event_id,{$push:{coments:comment}},function(err,data){
 
+       res.send(comment);
+   })
+  
+});
 
 
 

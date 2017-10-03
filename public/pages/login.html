@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="public/styles/bootstrap.css">
 
     <link rel="stylesheet" href="public/styles/login.css">   
-    <script src="public/scripts/modules/login.js"></script> 
+	<script src="public/scripts/login.js"></script>
     
 
 
@@ -75,7 +75,10 @@
                                                 <label class="radio-inline"><input type="radio"  ng-click="regData.sex='0'" tabindex="4"  name="optradio">Жінка</label>
                                             </div>
                                         </div>                  
-                                    </div>                           
+									</div>    
+									<div class="form-group">
+										<input type="text" ng-model="regData.reletionship" tabindex="2" class="form-control" placeholder="Сімейний стан" value="">
+									</div>                         
                                     <div class="form-group">
 										<input type="date" tabindex="5"  ng-model="regData.bday"  class="form-control"  value="">
 									</div>
